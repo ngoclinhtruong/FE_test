@@ -1,0 +1,564 @@
+/*------------------------------------------------------------------------------------------------------------------------
+	Author: Sean Goresht
+	www: http://seangoresht.com/
+	github: https://github.com/srsgores
+	twitter: http://twitter.com/S.Goresht
+	
+	Licensed under the GNU Public License
+	
+	=============================================================================
+	Filename:  reset.less
+	=============================================================================
+	
+--------------------------------------------------------------------------------------------------------------------- */
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+/* mixins */
+/*======================*/
+body {
+  max-width: 600px;
+  margin: 0 auto;
+}
+body * {
+  font: normal normal 1em / 1.3 arial;
+}
+a {
+  color: white;
+}
+.clearfix:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+#content {
+  padding: 0 5%;
+}
+#header {
+  background-image: url("../images/bg-header.png");
+  background-repeat: no-repeat;
+  height: 195px;
+  position: relative;
+}
+#header:after {
+  height: 1px;
+  width: 100%;
+  background: #d7d7d7;
+  content: "";
+  bottom: 49px;
+  position: absolute;
+  z-index: -1;
+}
+#header .content {
+  float: right;
+  padding: 5% 5% 0 0;
+  width: 48%;
+}
+#header .content > p {
+  font-size: 14px;
+  color: #464646;
+}
+#header .steps {
+  bottom: 30px;
+  position: absolute;
+}
+#header li {
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  border-radius: 20px;
+  height: 40px;
+  width: 40px;
+  background: white;
+  border: #6edc00 1px solid;
+  float: left;
+  list-style-type: none;
+  margin: 0 10px;
+}
+#header li:first-child {
+  margin-left: 0;
+}
+#header li p {
+  font-size: 16px;
+  color: #d7d7d7;
+  font-weight: bold;
+  line-height: 40px;
+  text-align: center;
+}
+#header li.active {
+  background: #004430;
+}
+#header li.active p {
+  color: #6edc00;
+}
+.icon-help {
+  background-image: url("../images/help.png");
+  background-repeat: no-repeat;
+  background-position: left center;
+  bottom: 30px;
+  color: #004430;
+  display: inline-block;
+  float: right;
+  height: 40px;
+  line-height: 42px;
+  padding-left: 25px;
+  right: 5%;
+  position: absolute;
+}
+.icon-help span {
+  background: white;
+  display: inline-block;
+}
+h1 {
+  color: #007aea;
+  font-size: 24px;
+  text-align: center;
+  margin-top: 20px;
+}
+.form label {
+  font-size: 14px;
+  color: #004430;
+  font-weight: bold;
+  float: left;
+  line-height: 38px;
+  width: 37%;
+}
+.form label.error {
+  font-size: 12px;
+  color: red;
+  font-weight: normal;
+  line-height: 14px;
+  margin-top: 5px;
+  width: 100%;
+}
+.form .input-width {
+  float: left;
+  width: 63%;
+}
+.form input,
+.form select {
+  -webkit-border-radius: 12px;
+  -moz-border-radius: 12px;
+  border-radius: 12px;
+  font-size: 16px;
+  height: 38px;
+  width: 100%;
+  background: none;
+  border: #c2c2c2 solid 1px;
+  box-sizing: border-box;
+  color: #898989;
+  float: left;
+  padding: 0 3%;
+  outline: 0;
+}
+.form input[name="id_number"] {
+  width: 37%;
+}
+.form .checkbox input {
+  float: left;
+  height: auto;
+  margin: 0;
+  width: 5%;
+}
+.form .checkbox input + label.error {
+  color: red;
+  margin: 0;
+}
+.form .checkbox label {
+  font: normal normal 12px / 16px "Myriad Pro", sans-serif;
+  color: #555;
+  float: right;
+  width: 94%;
+}
+.form .checkbox label strong {
+  color: black;
+  text-decoration: underline;
+}
+.form select {
+  -moz-appearance: none;
+  /* Firefox */
+  -webkit-appearance: none;
+  /* Safari and Chrome */
+  appearance: none;
+  padding-right: 30px;
+}
+.form #mainselection {
+  background-image: url("../images/arrow.gif");
+  background-repeat: no-repeat;
+  background-position: 95% 13px;
+  overflow: hidden;
+  width: 63%;
+}
+.btn {
+  -webkit-border-radius: 23px;
+  -moz-border-radius: 23px;
+  border-radius: 23px;
+  font-size: 14px;
+  height: 47px;
+  width: 22%;
+  background: none;
+  border-style: solid;
+  border-width: 2px;
+  box-sizing: border-box;
+  display: inline-block;
+  cursor: pointer;
+  font-weight: bold;
+  padding: 0;
+  line-height: 47px;
+  text-decoration: none;
+  outline: 0;
+}
+.btn .icon {
+  margin-top: 16px;
+}
+.input {
+  margin-top: 10px;
+}
+.signup-step1 {
+  margin-top: 30px;
+}
+.step1 .button {
+  margin-top: 80px;
+}
+.btn-cancel {
+  border-color: #6edc00;
+  color: #6edc00;
+  text-align: center;
+  text-decoration: none;
+}
+.btn-next {
+  background-color: #ff0092;
+  border-color: #ff0092;
+  color: white;
+  text-align: left;
+  padding-left: 4%;
+  float: right;
+}
+.icon {
+  background-image: url("../images/sprite.png");
+  background-repeat: no-repeat;
+  height: 12px;
+  width: 9px;
+  display: inline-block;
+  margin-top: 2px;
+}
+.icon-cancel {
+  background-position: 0 0;
+  float: left;
+  margin-left: 15px;
+}
+.icon-next {
+  background-position: -100px 0;
+  float: right;
+  margin-right: 15px;
+}
+#footer {
+  background-image: url("../images/bg-footer.jpg");
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  height: 176px;
+}
+#footer .link {
+  text-align: center;
+}
+#footer .link li {
+  background-image: url("../images/sprite.png");
+  background-repeat: no-repeat;
+  display: inline-block;
+  list-style-type: none;
+  margin-top: 70px;
+  text-indent: -999em;
+  width: 71px;
+}
+#footer .maxis {
+  background-position: 0 -56px;
+  height: 30px;
+  margin-right: 5px;
+}
+#footer .hotlink {
+  background-position: 0 -120px;
+  height: 29px;
+  margin: 8px 0 0 5px;
+}
+#footer .copyright {
+  font-size: 11px;
+  color: white;
+  padding-top: 40px;
+  text-align: center;
+}
+.step2 .button {
+  margin-top: 20px;
+}
+.notification {
+  padding: 0 13%;
+}
+.notification p {
+  font: normal normal 15px / 1.3 "Myriad Pro", sans-serif;
+  color: #898989;
+  padding: 12px 0;
+  text-align: center;
+}
+.notification .email {
+  font-size: 17px;
+  padding-top: 30px;
+}
+.notification .email span {
+  color: #555;
+}
+.resendlink {
+  border-top: #d7d7d7 solid 2px;
+  margin: 20px 10px 20px 0;
+  padding-top: 30px;
+  text-align: center;
+}
+.resendlink .icon-resend {
+  background-image: url("../images/sprite.png");
+  background-repeat: no-repeat;
+  background-position: left -198px;
+  display: inline-block;
+  margin-right: 5px;
+  height: 14px;
+  width: 12px;
+}
+.resendlink a {
+  font: normal normal 13px / 1.3 "Myriad Pro", sans-serif;
+  color: #004430;
+}
+.thankyou {
+  text-align: center;
+}
+.thankyou h1 {
+  background-image: url("../images/thankyou.png");
+  background-repeat: no-repeat;
+  background-position: center 50px;
+  height: 310px;
+  margin-bottom: 30px;
+  text-indent: -999em;
+}
+.thankyou h2,
+.thankyou p {
+  color: #898989;
+}
+.thankyou h2 {
+  font-size: 22px;
+  margin-bottom: 5px;
+}
+.thankyou p {
+  font-size: 16px;
+}
+.thankyou .btn-next {
+  margin: 30px auto 20px;
+  float: none;
+}
+@media only screen and (max-width: 570px) {
+  #header .content {
+    box-sizing: border-box;
+    padding: 3% 3% 0 0;
+    width: 36%;
+  }
+  #header .steps {
+    bottom: 30px;
+    position: absolute;
+    right: 75px;
+  }
+  #header li {
+    margin: 0 3px;
+  }
+  #header .icon-help {
+    right: 3%;
+  }
+  .step1 .button {
+    margin-top: 30px;
+  }
+  .btn {
+    width: 25%;
+  }
+  .form input[name="id_number"] {
+    width: 50%;
+  }
+}
+@media only screen and (max-width: 450px) {
+  #header {
+    height: auto;
+  }
+  #header .content {
+    float: none;
+    padding: 190px 3% 0;
+    width: 100%;
+  }
+  #header .steps {
+    margin-left: 10%;
+    margin-top: 10px;
+    position: inherit;
+    clear: both;
+    overflow: hidden;
+  }
+  #header:after {
+    bottom: 20px;
+  }
+  #header li {
+    margin: 0 10px;
+  }
+  #header .icon-help {
+    right: 10px;
+    bottom: 2px;
+  }
+  #content {
+    padding: 0 3%;
+  }
+  .form label,
+  .form .input-width,
+  .form input[name="id_number"] {
+    width: 100%;
+  }
+  .form label {
+    line-height: 24px;
+  }
+  .form #mainselection {
+    width: 100%;
+  }
+  .btn {
+    width: 40%;
+  }
+  #footer .link li a {
+    display: block;
+    padding-top: 10px;
+  }
+  .resendlink {
+    margin-bottom: 0;
+  }
+  .thankyou h1 {
+    background-position: center 30px;
+    height: 290px;
+    margin-top: 0;
+  }
+  .thankyou h2 {
+    font-size: 18px;
+  }
+  .thankyou p {
+    font-size: 14px;
+  }
+  .thankyou .btn-next {
+    margin-bottom: 0;
+  }
+}
